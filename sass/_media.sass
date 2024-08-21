@@ -1,0 +1,402 @@
+@media ( max-width: 1100px )
+    .container
+        max-width: 768px
+    .banner
+        margin: 40px 0
+    .header
+        &-title
+            display: none
+    .subheader
+        &-list
+            &__item
+                font-size: 14px
+        &-button
+            font-size: 12px
+    .hero
+        &-wrapper
+            flex-wrap: wrap-reverse
+            justify-content: center
+        &-content
+            max-width: 100%
+        &-logo
+            margin-bottom: 20px
+        img
+            max-width: 100%
+    .partners
+        &-cards
+            gap: 10px 0
+            justify-content: space-between
+        &-card
+            width: 30%
+            height: auto
+            &-image
+                width: 100%
+        .say-about-slider-prev
+            left: -7px
+        .say-about-slider-next
+            right: -7px
+    .articles
+        &-card
+            width: 32%
+            margin-bottom: 20px
+            display: block !important
+        &-cards
+            justify-content: space-between
+    .events
+        &-card
+            width: 48%
+            &:last-child
+                display: none
+    .about
+        &-content
+            width: 100%
+        &-image
+            display: none
+        &-logo-wrapper
+            display: none
+        &-wrapper
+            height: 100%
+    .prosperity-media
+        &-cards
+            flex-wrap: wrap
+            gap: 20px 0
+        &-card
+            width: 49%
+            margin: 0 !important
+        .block
+            &-title
+                &-wrapper
+                    flex-wrap: wrap
+                    margin-bottom: 20px
+    .footer
+        &-wrapper
+            flex-wrap: wrap
+        &-column
+            &:last-child
+                width: 100%
+                align-items: center
+        &-subscription
+            max-width: 400px
+    .photoreports-events .photoreports-card
+        width: 32% !important
+        &:last-child
+            display: none
+    .event
+        &-list
+            padding: 24px 20px
+    .subpage
+        .experts
+            &-card
+                width: 30%
+    .experts
+        &-card
+            &-image
+                height: 100%
+                width: auto
+    .expert
+        .interview
+            &-card
+                &-image
+                    &-wrapper
+                        width: 40%
+                .button
+                    margin-top: 10px
+                    width: auto
+                &-bottom
+                    flex-wrap: wrap-reverse
+                hr
+                    margin: 10px 0
+                &-share
+                    margin-top: 10px
+    .interview-expert
+        .interview-card
+            width: 100%
+    .study
+        &-card
+            flex-wrap: wrap
+            &-title
+                margin: 15px 0  
+@media ( max-width: 768px )
+    .container
+        max-width: 640px
+    .subheader
+        position: relative
+        &-list
+            flex-direction: column
+            position: absolute
+            background: #2BBCB4
+            left: 0
+            top: 56px
+            width: 100%
+            align-items: start
+            transform: scaleY(0)
+            transition: 0.3s
+            transform-origin: top
+            &__toggle
+                display: flex
+            &__item
+                padding: 10px 20px
+                width: 100%
+            &-active
+                transform: scaleY(1)
+        &-events-list
+            display: block
+            position: relative
+            width: 100%
+            top: 0
+            transform: scaleY(0)
+            transform-origin: top
+            transition: 0.3s
+            height: 0
+            &__item
+                background: #2BBCB4
+            &-btn
+                flex-wrap: wrap
+        .active
+            display: block
+            transform: scaleY(1)
+            height: 100%
+    .interview
+        &-card
+            width: 100%
+        &-banner
+            width: 100%
+            margin-bottom: 25px
+        &-image-wrapper
+            width: 100%
+    .article
+        .interview
+            &-card
+                justify-content: center
+                &-share
+                    flex-wrap: wrap
+            &-content
+                width: 100%
+        .experts-card
+            width: 50%
+            margin-top: 10px
+        
+    .articles
+        &-card
+            width: 48%
+            &:last-child
+                display: none !important
+    .block
+        &-title
+            &::before
+                display: none
+    .header
+        &-wrapper
+            flex-wrap: wrap
+        &-right
+            max-width: 100%
+        &-left
+            width: 60%
+            margin-bottom: 20px
+        &-logo
+            width: 100%
+        &-search
+            width: 100%
+    .event
+        &-list
+            flex-direction: column
+            align-items: center
+            border-radius: 20px
+    .container
+        .photoreports
+            &-card
+                width: 48% !important
+    .container
+        .experts
+            &-card
+                width: 47%
+                margin-bottom: 20px
+                &-image
+                    height: auto
+                    width: 100%
+    .interview-page 
+        .interview-card-image-wrapper
+            width: 320px !important
+    .interview-card-image-wrapper
+            width: 235px !important
+    .study
+        &-card
+            width: 100%
+    .register
+        &-title-wrapper
+            padding: 15px
+@media ( max-width: 640px )
+    .more
+        flex-shrink: 0
+    .banner
+        margin: 20px 0
+    .container
+        max-width: 576px
+    .news
+        &-card
+            height: 400px
+            &-image
+                &-wrapper
+                    height: 400px
+            &::after
+                height: 400px
+    .events
+        &-card
+            width: 100%
+            margin-bottom: 20px
+            &:last-child
+                display: block
+            &-image
+                height: fit-content
+                &-wrapper
+                    align-items: center
+                    height: auto
+        &-cards
+            flex-wrap: wrap
+    .footer
+        &-logo
+            width: 100%
+        &-contact
+            max-width: 100%
+        &-column
+            width: 100%
+            &:last-child
+                margin-top: 20px
+        &-subscription
+            max-width: 100%
+            width: 100%
+            &-subtext
+                margin-bottom: 10px
+    .partners
+        &-card
+            width: 47%
+    .event-top
+        flex-wrap: wrap
+    .materials-card
+        height: auto
+        flex-wrap: wrap
+        margin-bottom: 20px
+        &-image-wrapper
+            width: 100%
+            margin-bottom: 10px
+    .interview-card
+        height: 100% !important
+        &-top
+            flex-wrap: wrap
+        &-image
+            &-wrapper
+                width: 100% !important
+                margin-bottom: 10px
+    .nominations
+        &-list
+            padding: 60px 50px
+            &__item
+                width: 100%
+    .register
+        &-bottom
+            flex-wrap: wrap
+        &-left, &-right
+            width: 100%
+        &-left
+            margin-bottom: 20px
+@media ( max-width: 576px )
+    //settings
+    .container
+        max-width: 425px
+    .articles
+        &-card
+            width: 100%
+    .article
+        .experts-card
+            width: 80%
+    .interview-article
+        .interview-card-top
+            flex-wrap: wrap
+        .interview-card-image-wrapper
+            width: 100%
+            margin-bottom: 7px
+            img
+                width: 100%
+                height: auto
+    .block-title
+        margin: 5px 5px 5px 0
+        &-wrapper
+            flex-wrap: wrap
+            margin-bottom: 10px
+    .container
+        .photoreports
+            &-card
+                width: 100% !important
+    .expert
+        .interview
+            &-card
+                &-top
+                    flex-wrap: wrap
+                &-image
+                    width: 100%
+                    height: fit-content
+                    &-wrapper
+                        width: 100%
+                        border-radius: 10px 10px 0 0    
+                &-text
+                    border-radius: 0 0 10px 10px
+    .interview-expert
+        .interview
+            &-card
+                height: auto
+                &-top
+                    flex-wrap: wrap
+                &-image
+                    &-wrapper
+                        width: 100%
+                        margin-bottom: 10px
+    .experts
+        &-card
+            width: 100% !important
+    .article
+        .filter
+            margin-top: 15px
+        .interview-card-top
+            margin-bottom: 15px
+    .event-about
+        &-buttons
+            flex-direction: column
+        &-button
+            width: 100%
+@media ( max-width: 425px )
+    //settings
+    .container
+        max-width: 320px
+    //header
+    .header
+        &-right
+            &-top
+                flex-wrap: wrap
+                gap: 20px 0
+        &-left
+            width: 100%
+        &-logo
+            margin: 0
+        .social-icons
+            justify-content: center
+            width: 100%
+    .prosperity-media-card
+        width: 100%
+    .block-top
+        flex-wrap: wrap
+        margin-bottom: 10px
+    .news-card
+        height: 350px
+        &-image
+            &-wrapper
+                height: 350px
+        &::after
+            height: 350px  
+
+    .register
+        .block-title
+            font-size: 26px
+    .filter-list__item
+        padding: 10px 15px
+    .nomination-list
+        padding: 10px

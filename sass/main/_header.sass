@@ -1,0 +1,149 @@
+.header
+    &-wrapper
+        padding: 18px 0 0
+        display: flex
+        justify-content: space-between
+    &-logo
+        margin-right: 10px
+    &-title
+        font-family: "Poppins", sans-serif
+        font-size: 16px
+        font-weight: 600
+        line-height: 20.8px
+        max-width: 260px
+        color: #4A4A4A
+    &-left
+        display: flex
+        align-items: center
+    
+    &-right
+        max-width: 400px
+        width: 100%
+        &-top
+            display: flex
+            align-items: center
+            justify-content: space-between
+        &-bottom
+            margin-top: 16px
+            position: relative
+    &-login
+        margin-left: 6px
+        font-family: "Poppins", sans-serif
+        font-size: 16px
+        color: #4A4A4A
+        font-weight: 400
+        &-wrapper
+            display: flex
+            align-items: center
+    &-search
+        width: 400px
+        height: 49px
+        border-radius: 5px 
+        background: #F3F3F3
+        padding: 15px 50px 15px 17px
+        &-button
+            top: 6px
+            right: 6px
+            position: absolute
+            width: 37px
+            height: 37px
+            border-radius: 5px
+            background: #2bbcb4
+            border: none
+        &::placeholder
+            color: #4A4A4A
+            font-family: Poppins, sans-serif
+            font-size: 14px
+            font-weight: 600
+.subheader
+    margin-top: 27px
+    background: #099389
+    &-wrapper
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 8px 0
+    &-list
+        width: 80%
+        display: flex
+        padding: 0
+        justify-content: space-between
+        list-style: none
+        align-items: center
+        margin: 0
+        z-index: 999999
+        &__item
+            padding: 0
+            font-family: Poppins, sans-serif
+            font-size: 16px
+            font-weight: 400
+            display: flex
+            align-items: center
+            position: relative
+            a
+                color: #fff
+                text-decoration: none
+                &:visited
+                    color: #fff
+                &:hover
+                    text-decoration: underline
+        &__toggle
+            display: none
+            flex-direction: column
+            border-radius: 5px
+            background: #fff
+            width: 40px
+            height: 40px
+            border: none
+            padding: 10px 10px
+            align-items: center
+            justify-content: space-between
+            &-line
+                background: #2BBCB4
+                width: 20px
+                height: 4px
+                transition: 0.3s
+                border-radius: 5px
+            &-active
+                .subheader-list__toggle-line
+                    &:first-child
+                        transform: rotateZ(45deg) translate(6px, 5px)
+                        width: 28.2px
+                    &:last-child
+                        transform: rotateZ(-45deg) translate(6px, -5px)
+                        width: 28.2px
+                    &:nth-child(2)
+                        opacity: 0
+                        
+    &-button
+        display: flex
+        align-items: center
+        justify-content: center
+        background: transparent
+        border: 1px solid #fff
+        margin: 0
+        font-family: Poppins, sans-serif
+        font-size: 14px
+        font-weight: 900
+        text-decoration: none
+        &:hover
+            background: #FFFFFF9E
+            color: #099389
+    &-events-list
+        display: none
+        position: absolute
+        left: 0
+        padding: 0
+        top: 20px
+        list-style: none
+        width: max-content
+        z-index: 100
+        &__item
+            background: #099389
+            padding: 13px 20px
+.subheader-events-list-btn
+    &:hover 
+        .subheader-events-list
+            display: block
+.active
+    display: block

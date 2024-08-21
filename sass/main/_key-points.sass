@@ -1,0 +1,83 @@
+.key-points
+    background: #fff
+    padding: 80px 0
+    overflow: hidden
+    position: relative
+    &-card
+        background: transparent
+        &-wrapper
+            background: #fff
+            border-radius: 10px
+            padding: 20px 17px
+            border: 1px solid #099389
+            margin: 0 2px
+        &-image
+            width: 100%
+            height: max-content
+            border-radius: 10px
+            &-wrapper
+                height: 270px
+                display: flex
+                align-items: center
+                justify-content: center
+                border-radius: 10px
+                width: 100%
+                overflow: hidden
+                margin-bottom: 20px
+        &-title
+            right: 20px
+            margin: 0
+            font-family: Poppins, sans-serif
+            color: #099389
+            font-size: 16px
+            font-weight: 700
+            line-height: 21.92px
+            margin-bottom: 32px
+            span
+                border-radius: 50%
+                background: #CA5F12
+                padding: 4px 12px
+                color: #fff
+                margin-right: 9px
+    &-slider
+        overflow: hidden
+        position: relative
+        &-prev, &-next
+            border: 1px solid #099389
+            position: absolute
+            top: 25%
+            z-index: 99999
+            width: 45px
+            height: 45px
+            background: #fff
+            border-radius: 50%
+            display: flex
+            justify-content: center
+            align-items: center
+            cursor: pointer
+        &-prev
+            left: 30px
+        &-next
+            right: 30px
+    &::after
+        content: ''
+        left: -100%
+        background: #2BBCB4
+        height: 202px
+        width: 1000%
+        position: absolute
+        top: 25%
+        z-index: 0
+    p, li
+        font-family: Poppins, sans-serif
+        font-size: 16px
+        font-weight: 400
+        line-height: 23.28px
+.swiper
+    &-pagination
+        bottom: -40px !important
+        &-bullet
+            background: #fff
+            opacity: 1
+            &-active
+                background: #099389

@@ -1,0 +1,68 @@
+.say-about
+    background: #fff
+    padding: 80px 0
+    overflow: hidden
+    position: relative
+    &-card
+        border-radius: 10px
+        border: 1px solid #099389
+        padding: 20px 17px
+        background: #fff
+        &-top
+            display: flex
+            align-items: center
+            p
+                margin-left: 25px
+                font-family: Poppins, sans-serif
+                font-size: 16px
+                font-weight: 400
+                line-height: 21.2px
+                span
+                    color: #099389
+        &-text
+            margin-top: 46px
+            background:  #E6E6E6
+            padding: 12px
+            font-family: Poppins, sans-serif
+            font-size: 16px
+            font-weight: 400
+            line-height: 23.12px
+            border-radius: 5px
+            color: #4A4A4A
+
+        &-title
+            right: 20px
+            margin: 0
+            font-family: Poppins, sans-serif
+            color: #099389
+            font-size: 16px
+            font-weight: 700
+            line-height: 21.92px
+            margin-bottom: 32px
+            span
+                border-radius: 50%
+                background: #CA5F12
+                padding: 4px 12px
+                color: #fff
+                margin-right: 9px
+    &-slider
+        overflow: hidden
+        position: relative
+        &-prev, &-next
+            border: 1px solid #099389
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            z-index: 99999
+            width: 45px
+            height: 45px
+            background: #fff
+            border-radius: 50%
+            display: flex
+            justify-content: center
+            align-items: center
+            cursor: pointer
+        &-prev
+            left: 0px
+        &-next
+            right: 0px
