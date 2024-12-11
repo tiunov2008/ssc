@@ -2,14 +2,26 @@
   outline: none;
   box-sizing: border-box;
 }
-
+ol{
+  margin-bottom: 10px;
+}
+.accordion-item-content ol, .accordion-item-content ul{
+  margin-bottom: 10px;
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22.17px;
+}
 body {
   margin: 0;
 }
-
+a {
+  color: #099389;
+}
 .container {
   max-width: 1100px;
   margin: 0 auto;
+  font-family: Poppins, sans-serif;
 }
 
 input, textarea, select {
@@ -136,6 +148,7 @@ svg {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .social-icon:not(:last-child) {
   margin-right: 5px;
@@ -238,14 +251,56 @@ svg {
   opacity: 0;
   z-index: -1;
 }
-.accordion-item input:checked + .accordion-btn svg {
+.accordion-btn svg{
   transform: rotate(180deg);
+}
+.accordion-item input:checked + .accordion-btn svg {
+  transform: rotate(0deg);
 }
 .accordion-item input:checked ~ .accordion-item-content {
   margin-top: 22px;
   max-height: 100vh;
 }
+.accordion-item-content p {
+  margin-bottom: 10px;
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22.17px;
+}
+.read-more svg {
+  transition: all 0.35s;
+}
+.read-more-wrapper{
+  overflow: hidden;
+  margin-top: 20px;
+}
+.read-more-wrapper::after{
+  display: none;
+}
+.read-more-wrapper input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.read-more-wrapper .accordion-item-content{
+  display: none;
+}
 
+.read-more-wrapper input:checked + .read-more svg {
+  transform: rotate(180deg);
+}
+.read-more-wrapper .accordion-item-content{
+  max-height: 100%;
+}
+.read-more-wrapper input:checked ~ .accordion-item-content {
+  margin-top: 22px;
+  display: block;
+}
+
+.read-more-wrapper .accordion-item-content::after{
+  display: none;
+}
 .about-company {
   padding: 30px;
   border: 1px solid #099389;
@@ -261,6 +316,7 @@ svg {
   font-weight: 700;
   line-height: 24.66px;
   color: #191919;
+  text-transform: uppercase;
 }
 .about-company-title-wrapper {
   display: flex;
@@ -280,6 +336,7 @@ svg {
   font-size: 16px;
   font-weight: 400;
   line-height: 22.17px;
+  width: 75%;
 }
 .about-company-func h4 {
   margin: 0;
@@ -333,6 +390,12 @@ svg {
   padding: 77px 0 111px;
   overflow: hidden;
 }
+.nomitation-box{
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 40.8px;
+}
 .news-card {
   position: relative;
   height: 300px;
@@ -384,12 +447,8 @@ svg {
   z-index: 99999;
   width: 45px;
   height: 45px;
-  background: #fff;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
+  background: transparent;
 }
 .news-slider-prev {
   left: 20px;
@@ -412,6 +471,12 @@ svg {
 .footer {
   background: #099389;
   padding: 40px 0 15px;
+}
+.show-more .interview-card, .show-more .experts-card{
+  display: none;
+}
+.show-more .active {
+  display: block;
 }
 .footer-wrapper {
   display: flex;
@@ -496,6 +561,9 @@ svg {
   color: #fff;
   margin-bottom: 40px;
 }
+.footer-subscription-subtext a{
+  color: #FFFFFF;;
+}
 .footer-social-title {
   font-family: Poppins, sans-serif;
   font-size: 16px;
@@ -522,6 +590,7 @@ svg {
 .hero-wrapper {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 }
 .hero-content {
   max-width: 360px;
@@ -571,7 +640,7 @@ svg {
 }
 .hero-logo {
   max-width: 700px;
-  height: fit-content;
+  height: 270px;
 }
 
 .interview-cards {
@@ -590,8 +659,8 @@ svg {
   width: 49%;
 }
 .interview-card-image {
+  object-fit: cover;
   height: 100%;
-  width: fit-content;
 }
 .interview-card-image-wrapper {
   display: flex;
@@ -623,6 +692,7 @@ svg {
   font-size: 16px;
   font-weight: 600;
   line-height: 21.2px;
+  margin-top: 15px;
 }
 .interview-card-name {
   font-family: Poppins, sans-serif;
@@ -636,6 +706,7 @@ svg {
   flex-direction: column;
   padding: 10px 0;
   justify-content: space-between;
+  width: 100%;
 }
 .interview-card-share {
   margin-top: 24px;
@@ -644,6 +715,10 @@ svg {
   font-weight: 600;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+}
+.interview-card-share p{
+  margin-bottom: 0;
 }
 .interview-card-share span {
   margin-right: 10px;
@@ -733,7 +808,10 @@ svg {
   margin-top: 16px;
   text-decoration: none;
 }
-.subpage .interview-card-name:hover {
+.study-card-title{
+  text-decoration: none;
+}
+.subpage .interview-card-name:hover, .study-card-title:hover {
   text-decoration: underline;
 }
 .subpage .interview-card-image-wrapper {
@@ -763,10 +841,57 @@ svg {
   text-decoration: underline;
 }
 .subpage .experts-cards {
-  row-gap: 20px;
   margin-bottom: 32px;
 }
-
+.interview-card-achievements{
+  display: flex;
+  margin: 10px 0;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.interview-card-achievement{
+  padding: 15px;
+  background: #F3F3F3;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 46%;
+}
+.company .interview-card{
+  height: auto;
+}
+.company-page .interview-page{
+  padding: 0;
+  margin-top: 20px;
+  margin-bottom: 0;
+  height: auto;
+}
+.company-page .interview-card-text{
+  margin: 0;
+  display: block;
+}
+.company-page .interview-card-image-wrapper{
+  width: 250px;
+  height: 250px;
+}
+.company .interview-card-image-wrapper{
+  width: 150px;
+  height: 150px;
+}
+.interview-card-achievement-title{
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21.2px;
+  color: #191919;
+}
+.interview-card-achievement-subtitle{
+  font-family: Poppins, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 21.2px;
+  color: #191919aa;
+}
 .expert-text {
   font-family: Poppins, sans-serif;
   font-size: 16px;
@@ -873,6 +998,11 @@ svg {
   font-weight: 600;
   line-height: 24.94px;
   margin-top: 0;
+}
+.experts-card {
+  width: 24%;
+  background: #fff;
+  border-radius: 5px;
 }
 .article .experts-card-text {
   padding: 16px;
@@ -1158,6 +1288,9 @@ svg {
   background: rgba(255, 255, 255, 0.6196078431);
   color: #099389;
 }
+.header-button{
+  display: none;
+}
 .subheader-events-list {
   display: none;
   position: absolute;
@@ -1203,14 +1336,10 @@ svg {
 }
 .experts-cards {
   display: flex;
+  gap: 20px 14px;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
-.experts-card {
-  width: 24%;
-  background: #fff;
-  border-radius: 5px;
-}
+
 .experts-card-image {
   width: 100%;
 }
@@ -1223,6 +1352,16 @@ svg {
   justify-content: center;
   overflow: hidden;
   border-radius: 5px 5px 0 0;
+}
+.experts-card-image-wrapper a{
+  height: 100%;
+}
+.experts-card-image-wrapper img{
+  object-fit: cover;
+  height: 100%;
+}
+.expert-text iframe{
+  width: 100%;
 }
 .experts-card-text {
   padding: 0 9px 12px;
@@ -1248,15 +1387,103 @@ svg {
   line-height: 19.18px;
   display: flex;
   justify-content: center;
+  height: auto !important;
 }
-
+.article-images{
+  display: flex;
+  height: 420px;
+  overflow: hidden;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.article2 .interview-content{
+  width: 100%;
+}
+.article-image-block{
+  margin-top: 25px;
+  margin-bottom: 25px;
+  border: 1px solid #099389;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  font-family: "Poppins", Sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+}
+.article-image-block img{
+  border-radius: 10px;
+  margin-right: 20px;
+}
+.article-img{
+  height: fit-content;
+  width: 100%;
+}
+.article-img-wrapper{
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.article-img-wrapper:first-child{
+  width: 65%;
+}
+.article-img-wrapper:last-child{
+  width: 30%;
+}
+.company-info{
+  display: flex;
+  column-gap: 40px;
+  font-family: Poppins, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26.01px;
+  color: #fff;
+}
+.event-partners .partners-card{
+  width: 234px;
+  height: 140px;
+  background: #fff;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.event-partners .partners-card a{
+  display: flex;
+  justify-content: center;
+}
+.event-partners .partners-card-image{
+  width: 80%;
+}
+.partners-card-status{
+  width: 100%;
+  background: #CA5F12;
+  padding: 10px 0;
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 21.92px;
+  text-align: center;
+  color: #FFFFFF;
+}
+.event-partners .partners-cards{
+  background: transparent;
+  gap: 41px;
+}
 .events {
   background: #E6E6E6;
   padding: 40px 0 80px;
 }
 .events-cards {
   display: flex;
-  justify-content: space-between;
+  gap: 22px;
+  flex-wrap: wrap;
 }
 .events-card {
   width: 32%;
@@ -1267,6 +1494,7 @@ svg {
 }
 .events-card-wrapper {
   padding: 26px;
+  min-height: 208px;
 }
 .events-card-top {
   display: flex;
@@ -1306,6 +1534,15 @@ svg {
   display: flex;
   justify-content: center;
   border-radius: 0 0 10px 10px;
+  height: 240px;
+}
+.events-card-image-wrapper a{
+  height: 100%;
+  width: 100%;
+}
+.events-card-image-wrapper img{
+  object-fit: cover;
+  height: 100%;
 }
 .events-card .button {
   position: absolute;
@@ -1430,7 +1667,19 @@ svg {
 .event-about-buttons {
   display: flex;
 }
-
+.read-more{
+  color: #2BBCB4;
+  display: flex;
+  justify-content: center;
+  font-family: "Poppins", Sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  align-items: center;
+  cursor: pointer;
+}
+.read-more svg{
+  margin-right: 10px;
+}
 .photoreports {
   margin-bottom: 48px;
 }
@@ -1441,7 +1690,7 @@ svg {
 .photoreports-cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  gap: 22px;
 }
 .photoreports-card {
   width: 32%;
@@ -1449,6 +1698,11 @@ svg {
   margin-bottom: 32px;
   position: relative;
   border-radius: 5px;
+}
+.photoreports-card-image{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 .photoreports-card-image-wrapper {
   width: 100%;
@@ -1458,6 +1712,18 @@ svg {
   justify-content: center;
   overflow: hidden;
   border-radius: 5px;
+}
+.photoreport .photoreports-card-image{
+  width: 100%;
+  height: 304px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 5px;
+}
+.photoreport .photoreports-card-image img{
+  height: 100%;
 }
 .photoreports-card-title {
   position: absolute;
@@ -1563,8 +1829,8 @@ svg {
 }
 .about-image {
   position: absolute;
-  right: 0;
-  top: 80px;
+  right: -430px;
+  top: 0;
   border-radius: 5px;
   height: inherit;
 }
@@ -1573,7 +1839,7 @@ svg {
 }
 .about-logo-wrapper {
   position: absolute;
-  right: 0;
+  right: 70px;
   top: 50%;
   transform: translateY(-50%);
   padding: 20px 27px;
@@ -1756,7 +2022,6 @@ svg {
 }
 .key-points-card-image {
   width: 100%;
-  height: max-content;
   border-radius: 10px;
 }
 .key-points-card-image-wrapper {
@@ -1777,7 +2042,8 @@ svg {
   font-size: 16px;
   font-weight: 700;
   line-height: 21.92px;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
+  display: flex;
 }
 .key-points-card-title span {
   border-radius: 50%;
@@ -1785,6 +2051,11 @@ svg {
   padding: 4px 12px;
   color: #fff;
   margin-right: 9px;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .key-points-slider {
   overflow: hidden;
@@ -1793,7 +2064,7 @@ svg {
 .key-points-slider-prev, .key-points-slider-next {
   border: 1px solid #099389;
   position: absolute;
-  top: 25%;
+  top: 135px;
   z-index: 99999;
   width: 45px;
   height: 45px;
@@ -1817,7 +2088,7 @@ svg {
   height: 202px;
   width: 1000%;
   position: absolute;
-  top: 25%;
+  top: 235px;
   z-index: 0;
 }
 .key-points p, .key-points li {
@@ -1849,6 +2120,7 @@ svg {
   border: 1px solid #099389;
   padding: 20px 17px;
   background: #fff;
+  height: auto;
 }
 .say-about-card-top {
   display: flex;
@@ -1865,7 +2137,7 @@ svg {
   color: #099389;
 }
 .say-about-card-text {
-  margin-top: 46px;
+  margin-top: 20px;
   background: #E6E6E6;
   padding: 12px;
   font-family: Poppins, sans-serif;
@@ -2076,6 +2348,7 @@ svg {
   }
   .hero img {
     max-width: 100%;
+    height: auto;
   }
   .partners-cards {
     gap: 10px 0;
@@ -2347,6 +2620,13 @@ svg {
   .events-cards {
     flex-wrap: wrap;
   }
+  .article-image-block{
+    flex-wrap: wrap;
+  }
+  .article-image-block img{
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
   .footer-logo {
     width: 100%;
   }
@@ -2462,6 +2742,9 @@ svg {
     width: 100%;
     margin-bottom: 10px;
   }
+  .interview-card-achievement{
+    width: 100%;
+  }
   .experts-card {
     width: 100% !important;
   }
@@ -2520,5 +2803,12 @@ svg {
   }
   .nomination-list {
     padding: 10px;
+  }
+  .button-container{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .button-container .button{
+    width: 100%;
   }
 }
